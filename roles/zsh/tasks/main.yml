@@ -1,0 +1,41 @@
+
+# Installation and setup
+- import_tasks: debian.yml
+  when: ansible_os_family == "Debian"
+- import_tasks: redhat.yml
+  when: ansible_os_family == "RedHat"
+- import_tasks: mac.yml
+  when: ansible_os_family == "Darwin"
+
+# Configuration
+- name: Check if zshrc already exists
+  stat: path="{{dotfiles_user_home}}/.zshrc"
+  register: zshrc_stat
+
+- name: Back up zshrc if it exists
+  command: mv ~/.zshrc ~/.zshrc.bak
+  args:
+    creates: "{{dotfiles_user_home}}/.zshrc.bak"
+  when: zshrc_stat.stat.exists
+
+- import_tasks: prezto.yml
+  when: zsh_prezto
+
+- name: Symlink zshrc
+  file:
+    src: "{{ dotfiles_home }}/ansible/roles/zsh/files/zshrc"
+    dest: "{{dotfiles_user_home}}/.zshrc"
+    state: link
+  when: not zsh_prezto
+
+- name: Check if .oh-my-zsh exists
+  stat:
+    path: ~/.oh-my-zsh
+  register: stat_oh_my_zsh_result
+
+- name: Cloning oh-my-zsh
+  git:
+    repo=https://github.com/robbyrussell/oh-my-zsh
+    dest=~/.oh-my-zsh
+  when: not stat_oh_my_zsh_result.stat.exists
+

@@ -1,0 +1,29 @@
+ubuntu_ppa:
+  - kisak/kisak-mesa
+  - nextcloud-devs/client
+  - ansible/ansible
+  - lutris/lutris
+  - teejee2008/timeshift
+  - kisak/kisak-mesa
+  - kubuntu-ppa/ppa
+
+ubuntu_packages:
+  - net-tools
+  - whois
+  - deja-dup
+  - libnss-resolve # vpnc required
+  - openconnect
+  - pidgin
+  - x11vnc
+  - ansible
+  - nextcloud-client
+  - htop
+  - sublime-text
+  - python3-pip
+  - python3-setuptools
+  - pipx
+  - virtualenv
+  - python-dev
+  - lutris
+  - mono-devel
+  - timeshift

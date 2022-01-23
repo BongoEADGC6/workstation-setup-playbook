@@ -1,0 +1,17 @@
+- name: Set up local development environment
+  hosts: all
+  pre_tasks:
+    - name: Pre-flight Checks | Variables
+      assert: 
+        that:
+          - dotfiles_home is defined
+  roles:
+    # Tag each role so that we can select individual roles to run with ansible-playbook --tags
+    - {role: git, tags: ['git']}
+    - {role: package_manager, tags: ['package_manager', 'bootstrap']}
+    - {role: zsh, tags: ['zsh', 'bootstrap']}
+    - {role: python, tags: ['python']}
+    - {role: vim, tags: ['vim']}
+    - {role: tmux, tags: ['tmux']}
+    #- {role: kubernetes, tags: ['kubernetes']}
+    - role: geerlingguy.helm

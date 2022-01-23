@@ -1,0 +1,127 @@
+# Utilities that don't get installed by a role
+mac_homebrew_packages:
+  - curl
+  - jq
+  - wget
+  - highlight
+  - terminal-notifier
+  - youtube-dl
+  - htop-osx
+  - httpie
+  - diff-so-fancy
+  - docker-clean
+  - gpg
+  - heroku/brew/heroku
+  # Top for docker containers
+  - ctop
+  # User-contributed docs for Unix commands
+  - tldr
+  # what's the wifi password?
+  - wifi-password
+  # Share tmux sessions
+  - tmate
+  # README rendering
+  - grip
+  # Prose linting
+  - vale
+  # For repeating commands
+  - watch
+  # For displaying a notification when a command finishes
+  - noti
+
+# Mac Apps to be installed with homebrew-cask
+mac_cask_packages:
+  # Password manager
+  - 1password
+  # Editor
+  - visual-studio-code
+  # Backup/storage
+  - dropbox
+  # Browsers
+  - firefox
+  - google-chrome
+  # Display
+  - keepingyouawake  # maintained caffeinate wrapper
+  - bestres  # quickly switch resolution
+  - flux
+  # Utilities
+  - appcleaner
+  - daisydisk
+  # Docker
+  - docker
+  # chat
+  - slack
+  - keybase
+  - discord
+  # Video conferencing
+  - zoomus
+  # Media/Music
+  - iina
+  # Images
+  - imageoptim  # optimizing images
+  # Notetaking
+  - fsnotes
+  - notion
+  # Fonts
+  - font-ubuntu
+  - font-cousine
+  - font-hack
+  - font-ia-writer-duospace
+  # Databases
+  - tableplus  # RDBMS client
+  # Docs
+  - dash
+  # Bibliography
+  - bibdesk
+  # Stay focused
+  - selfcontrol
+  # Design
+  - sketch
+  - zeplin
+  # Deployments
+  - now
+  # REST client
+  - insomnia
+  # Flashcards
+  - anki
+  # Markdown-based presentations
+  - deckset
+  # Screen captures and recording
+  - cloudapp
+
+# Mac-App-Store-only apps to be installed with mas
+# Use App IDs found with `mas search <name>`
+mac_mas_packages:
+  # NOTE: the IDs can be found with `mas search <app name>`
+  - {"id": 585829637, "name": "Todoist"}
+  - {"id": 409203825, "name": "Numbers"}
+
+ubuntu_ppa:
+  - kisak/kisak-mesa
+  - nextcloud-devs/client
+  - ansible/ansible
+  - lutris/lutris
+  - teejee2008/timeshift
+  - kisak/kisak-mesa
+  - kubuntu-ppa/ppa
+
+ubuntu_packages:
+  - net-tools
+  - whois
+  - deja-dup
+  - libnss-resolve # vpnc required
+  - openconnect
+  - pidgin
+  - x11vnc
+  - ansible
+  - nextcloud-client
+  - htop
+  - sublime-text
+  - python3-pip
+  - python3-setuptools
+  - pipx
+  - virtualenv
+  - python-dev
+  - lutris
+  - mono-devel
+  - timeshift

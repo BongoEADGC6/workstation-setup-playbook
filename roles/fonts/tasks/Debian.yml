@@ -8,8 +8,8 @@
 - name: Create font directory
   file:
     path: "~/.local/share/fonts"
-    owner: "{{ ansible_user }}"
-    group: "{{ ansible_user }}"
+#     owner: "{{ ansible_user }}"
+#     group: "{{ ansible_user }}"
     state: directory
 
 - name: Set font cache update fact

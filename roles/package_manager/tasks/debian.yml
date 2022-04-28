@@ -1,5 +1,9 @@
 
-
+- name: Add required apt PPAs
+  become: yes
+  ansible.builtin.apt_repository:
+    repo: "ppa:{{ item }}"
+  with_items: "{{ ubuntu_ppa  }}"
 
 - name: Update apt cache
   become: yes

@@ -4,6 +4,7 @@ ubuntu_ppa:
   - ansible/ansible
   - lutris-team/lutris
   - kubuntu-ppa/ppa
+  - teejee2008/timeshift
 
 ubuntu_packages:
   # Tools

@@ -1,6 +1,18 @@
 - name: Set up local development environment
   hosts: all
   pre_tasks:
+    - name: Import General vars
+      ansible.builtin.include_vars: "vars/general.yaml"
+    - name: Import vars per OS
+      ansible.builtin.include_vars: "{{ lookup('first_found', params)  }}"
+      vars:
+        params:
+          files:
+            - '{{ansible_distribution}}.yaml'
+            - '{{ansible_os_family}}.yaml'
+          paths:
+            - 'vars'        
+
     - name: Pre-flight Checks | Variables
       assert: 
         that:

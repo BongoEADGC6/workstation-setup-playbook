@@ -8,7 +8,7 @@
 
 - name: Link global gitignore file
   file:
-    src: "{{ dotfiles_home }}/ansible/roles/git/files/gitignore_global.link"
+    src: "{{ dotfiles_home }}/files/git/gitignore_global.link"
     dest: "~/.gitignore_global"
     state: link
     force: yes

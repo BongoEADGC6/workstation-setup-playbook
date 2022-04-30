@@ -23,7 +23,7 @@
 
 - name: Symlink zshrc
   file:
-    src: "{{ dotfiles_home }}/ansible/roles/zsh/files/zshrc"
+    src: "{{ dotfiles_home }}/files/zsh/zshrc"
     dest: "~/.zshrc"
     state: link
   when: not zsh_prezto

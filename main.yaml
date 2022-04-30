@@ -28,5 +28,5 @@
     - {role: vim, tags: ['vim']}
     - {role: tmux, tags: ['tmux']}
     #- {role: kubernetes, tags: ['kubernetes']}
-    - andrewrothstein.kubernetes-helm
+    - geerlingguy.helm
     - andrewrothstein.kubectl

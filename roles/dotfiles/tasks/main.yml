@@ -1,0 +1,4 @@
+- name: Git checkout dotfiles repo
+  ansible.builtin.git:
+    repo: 'git@github.com:BongoEADGC6/dotfiles.git'
+    dest: "~/.dotfiles/"

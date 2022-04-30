@@ -19,9 +19,10 @@
           - dotfiles_home is defined
   roles:
     # Tag each role so that we can select individual roles to run with ansible-playbook --tags
+    - {role: package_manager, tags: ['package_manager', 'bootstrap']}
+    - {role: dotfiles, tags: ['bootstrap']}
     - {role: fonts, tags: ['fonts']}
     - {role: git, tags: ['git']}
-    - {role: package_manager, tags: ['package_manager', 'bootstrap']}
     - {role: zsh, tags: ['zsh', 'bootstrap']}
     - {role: python, tags: ['python']}
     - {role: vim, tags: ['vim']}

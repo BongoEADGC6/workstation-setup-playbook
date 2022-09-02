@@ -54,6 +54,15 @@
     dest: "~/.vimrc"
     state: link
 
+- name: Download vim_runtime
+  git:
+    repo: 'https://github.com/amix/vimrc.git'
+    depth: 1
+    dest: ~/.vim_runtime
+
+#- name: Setup basic vimrc
+#  command: sh ~/.vim_runtime/install_basic_vimrc.sh
+
 - name: Install plugins
   command: vim +PlugInstall +qall
   when: vim_install_plugins|bool

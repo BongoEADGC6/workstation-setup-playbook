@@ -14,7 +14,7 @@
     src: "{{ dotfiles_home }}/files/tmux/tmux.conf"
     dest: "~/.tmux.conf"
     state: link
-  when: ansible_os_family != "Debian"
+  when: ansible_os_family != "Darwin"
 
 # TODO: macOS
 # On macOS, use the same tmux.conf, but also use

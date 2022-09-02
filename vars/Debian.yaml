@@ -1,9 +1,4 @@
 ubuntu_ppa:
-  - kisak/kisak-mesa
-  - nextcloud-devs/client
-  - ansible/ansible
-  - lutris-team/lutris
-  - kubuntu-ppa/ppa
   - teejee2008/timeshift
 
 ubuntu_packages:
@@ -11,21 +6,8 @@ ubuntu_packages:
   - net-tools
   - whois
   - htop
-  - x11vnc
-  # Backup Tools
-  - deja-dup
-  - timeshift
-  - ansible
-  # Desktop Apps
-  - nextcloud-client
-  - sublime-text
   # Python
-  - python-dev
   - python3-pip
   - python3-setuptools
   - virtualenv
   - pipx
-  # Games
-  - lutris
-  - mono-devel
-  - steam

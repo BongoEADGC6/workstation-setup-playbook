@@ -1,10 +1,14 @@
 - name: Set up local development environment
-  hosts: all
+  hosts: localhost
   pre_tasks:
     - name: Import General vars
       ansible.builtin.include_vars: "vars/general.yaml"
+      tags:
+        - always
     - name: Import vars per OS
       ansible.builtin.include_vars: "{{ lookup('first_found', params)  }}"
+      tags:
+        - always
       vars:
         params:
           files:
@@ -14,6 +18,8 @@
             - 'vars'        
 
     - name: Pre-flight Checks | Variables
+      tags:
+        - always
       assert: 
         that:
           - dotfiles_home is defined

@@ -5,15 +5,12 @@
     repo: "ppa:{{ item }}"
   with_items: "{{ ubuntu_ppa  }}"
 
-- name: Update apt cache
-  become: yes
-  apt: update_cache=yes
-  when: package_update
-
-- name: Upgrade apt packages
-  become: yes
-  apt: upgrade=yes
-  when: package_upgrade
+#- name: Upgrade apt packages
+#  become: yes
+#  apt: 
+#    upgrade: yes
+#    update_cache: yes
+#  when: package_upgrade
 
 - name: Install apt packages
   become: yes
